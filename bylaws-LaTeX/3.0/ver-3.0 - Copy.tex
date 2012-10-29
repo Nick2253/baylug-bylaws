@@ -1,0 +1,583 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{parskip}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{color}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Version and Date Information
+\newcommand{\bylawver}{3.0}  %Modify version number here
+\newcommand{\bylawdate}{February 9, 2011}  %Modify date here
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%HRule Command for horizontal lines
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+%Superscript and subscript commands
+\makeatletter
+\newcommand\textsubscript[1]{\@textsubscript{\selectfont#1}}
+\def\@textsubscript#1{{\m@th\ensuremath{_{\mbox{\fontsize\sf@size\z@#1}}}}}
+\newcommand\textbothscript[2]{%
+  \@textbothscript{\selectfont#1}{\selectfont#2}}
+\def\@textbothscript#1#2{%
+  {\m@th\ensuremath{%
+    ^{\mbox{\fontsize\sf@size\z@#1}}%
+    _{\mbox{\fontsize\sf@size\z@#2}}}}}
+\def\@super{^}\def\@sub{_}
+
+\catcode`^\active\catcode`_\active
+\def\@super@sub#1_#2{\textbothscript{#1}{#2}}
+\def\@sub@super#1^#2{\textbothscript{#2}{#1}}
+\def\@@super#1{\@ifnextchar_{\@super@sub{#1}}{\textsuperscript{#1}}}
+\def\@@sub#1{\@ifnextchar^{\@sub@super{#1}}{\textsubscript{#1}}}
+\def^{\let\@next\relax\ifmmode\@super\else\let\@next\@@super\fi\@next}
+\def_{\let\@next\relax\ifmmode\@sub\else\let\@next\@@sub\fi\@next}
+\makeatother
+
+%Changes for section numbering
+\newcommand{\article}[1]{\section{#1}}
+\renewcommand{\sec}[1]{\subsection{#1}}
+\newcommand{\subsec}[1]{\subsubsection{#1}}
+
+%Change section numbering headings and style
+\renewcommand{\thesection}{Article \arabic{section}}
+\renewcommand{\thesubsection}{Section \arabic{section}.\twodigits{subsection}}
+\renewcommand{\thesubsubsection}{Subsection \arabic{section}.\twodigits{subsection}(\alph{subsubsection})}
+
+\newcommand{\twodigits}[1]{\ifnum\value{#1}<10 0\fi\arabic{#1}}
+
+%Change section spacing
+\makeatletter
+\renewcommand*{\@seccntformat}[1]{\csname the#1\endcsname . }
+\makeatother
+
+%Subtitle for sections
+\newcommand*{\sectionpostamble}{}
+\newcommand*{\subtitle}[1]{%
+  \def\sectionpostamble{#1}%
+}
+
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection . }{0pt}{}
+  [\normalfont\small\itshape\raggedright\sectionpostamble
+  \global\let\sectionpostamble\relax]
+  
+\renewcommand{\article}[2]{\subtitle{#2} \section{#1}}
+  
+%Fix List Spacing
+\setlist{nolistsep}
+
+%Page Numbering and Footer
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot[R]{\footnotesize Page \thepage\ of \pageref*{LastPage}}
+\fancyfoot[L]{\footnotesize BayLUG Bylaws Revision \bylawver{}, approved \bylawdate{}.}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+%Command for Note Text
+\newcommand{\note}[1]{\footnotesize \textcolor{red}{\textit{#1}}}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%
+%% Title and Logo %%
+%%%%%%%%%%%%%%%%%%%%
+
+\begin{center}
+
+\includegraphics{BaylugLogo.jpg}
+
+\HRule \\[0.4cm]
+{ \LARGE \bfseries Bay Area LEGO^{\small \textregistered{} }  \LARGE \bfseries Users Group Bylaws }\\
+
+\HRule \\
+\textsc{Revision \bylawver, approved \bylawdate}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%
+%% Article: Name %%
+%%%%%%%%%%%%%%%%%%%
+
+\article{Name}{How we are known.}
+\label{art:name}
+The organization's name shall be the ``Bay Area LEGO^\textregistered{} Users Group'', abbreviated to ``BayLUG'', as needed.  The organization will be hereinafter refered to as ``BayLUG'' or ``the Club''.
+
+LEGO^\textregistered{} is a trademark of the LEGO Group of companies, which does not sponsor, authorize or endorse BayLUG or its affiliates.
+
+\underline{Donated or Loaned Property or Item}: Property or items with tangible and/or intangible value, loaned, donated or that otherwise legally come into the club's possession other than by purchase. Such items, termed ``donated" or ``loaned" hereinafter may include, but are not limited to: LEGO, other toys, legal tender, motor or other vehicles and/or parts, real estate, usage rights, etc.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Article: Purpose and Incorporations %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\article{Purpose and Incorporation}{The purpose, vision, and mission of BayLUG.}
+
+\sec{Mission}
+
+BayLUG is a non-profit, educational organization dedicated to creating and maintaining public awareness of, appreciation for, and fellowship related to LEGO^\textregistered{}, LEGO^\textregistered{} Trains, and other LEGO^\textregistered-related hobbies, primarily through discussion and presentation at events that celebrate the historic and ongoing contribution of LEGO^\textregistered{} to the hobbyist community. 
+
+\sec{Nature and Purpose}
+
+The property of BayLUG, if any, is irrevocably dedicated to charitable purposes. No part of the net income or assets of the Club shall inure to the benefit of private persons.  The charitable activities of BayLUG serve primarily to benefit persons within the geographic boundaries of the state of California.
+
+\sec{Incorporation}
+
+BayLUG is organized as a non-profit unincorporated association registered under the laws of the State of California. Maintenance of said status is the responsibility of the Executive Committee.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Article: Membership %%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\article{Membership}{Membership classes. The process to become and remove a Member. Member rights.}
+
+%Membership Classes and Eligibility
+\sec{Membership Classes}
+
+There shall be four classes of membership: ``Individual Adult Membership", ``Individual Youth Membership", ``Family Membership", and ``Lifetime Membership''. Where these Bylaws refer to ``Member" without specifying, all membership classes are meant. A Roll of Club Members listing all Members in good standing and any pertinent information regarding their membership shall be processed and maintained by the Vice President (VP). 
+
+\subsec{Individual Adult Memberships}
+
+Individual Adult Memberships may be granted to any adult applicant upon fulfillment of the eligibility criteria described in \ref{subsec:eligibility}.  
+
+For the purposes of membership, an adult is a natural person, 18 years of age or older or an emancipated minor, who is legally competent to enter into binding contracts.  
+
+\subsec{Individual Youth Memberships}
+Individual Youth Memberships may be granted to any youth applicant upon fulfillment of the eligibility criteria described in \ref{subsec:eligibility}. Individual Youth Members enjoy the full rights and privileges of an Individual Adult Member, but require that an adult parent or legal guardian act as their representative to the Club. An Individual Youth Member's parent(s) or legal guardian(s) are not required to be Club members, but may attend Club meetings.
+
+For the purposes of membership, a youth is an unemancipated natural person under 18 years old.
+
+\subsec{Family Memberships}
+
+Family Memberships may be granted to any family applicant upon fulfillment of the eligibility criteria described in \ref{subsec:eligibility}.  The family shall designate a Family Representative to act as the primary contact between BayLUG and the family. The Family Representative shall be an Adult. The family members shall designate their Family Representative in writing to the Vice President. Each family member of a Family Membership enjoys the full rights and privileges of an Individual Adult Member, but the family is considered to have one membership and operates under special rules for the purposes of voting and determining a quorum as described in .
+
+For the purposes of membership, a family is 2-6 natural persons who share ties of blood, marriage, partnership, residence, or adoption.  A family can not consist of just one person. 
+
+\subsec{Lifetime Memberships}
+
+Any BayLUG member who has rendered meritorious service in furthering BayLUG, its mission, or its goals may be granted a Lifetime Membership.  Lifetime Members enjoy the full rights and privileges of an Individual Adult Member except they shall be exempt from any dues and assessments.
+
+A Lifetime Member must be nominated for Lifetime Member Status by at least three members.  This status will then be bestowed by the affirmative vote of a simple majority of the membership.  The Executive Committee shall have the power to veto the membership's affirmation vote.
+
+%Membership Eligibity
+\sec{Establishing and Maintaining Membership}
+
+\subsec{Membership Eligibility}
+\label{subsec:eligibility}
+
+Individuals and families are eligible for Membership on fulfillment of all of: 
+\begin{enumerate}
+    \item Payment of initial dues. 
+    \item Acceptance and espousal of the Club Bylaws. 
+    \item Submitting a completed application for membership providing needed information. 
+    \item Acceptance and approval of the application by any member of the Executive Committee. 
+\end{enumerate}
+
+There is no geographic or residency requirement. The Club welcomes members from anywhere.  It is the policy of BayLUG not to discriminate in its qualifications for membership against any person by reason of his or her sex, race, religion, creed, sexual orientation, or other physical condition, or national origin.
+
+\subsec{Good Standing}
+\label{subsec:good-standing}
+
+Members maintain good standing with BayLUG by: 
+\begin{enumerate}
+    \item Prompt payment of dues; before or within 30 days of the annual members meeting. 
+    \item Compliance with all other requirements set forth in these Bylaws.
+\end{enumerate}
+
+Loss of good standing may be grounds for automatic or involuntary termination of membership. 
+
+\subsec{Dues}
+
+\note{Do we want members to vote on Dues or Fees, or should the Executive Committee alone have that power?  Remember, members could petition against the Executive Committee if they abuse this power.}
+
+The Executive Committee will be responsible for setting and collecting all dues and fees from Members and Applicants.  The Executive Committee may set special dues or fees on applicants above and beyond normal membership dues or fees.  The Executive Committee may not change the dues less than 60 days before the beginning of the Members' term.
+
+Members may pay their dues to the Executive Committee in advanced.  In the event that the Executive Committee changes the dues after a Member has pre-paid their dues, the Executive Committee is not entitled to request additional payment from the Member for the duration of pre-paid dues nor obligated to refund pre-paid dues to the Member. 
+
+\subsec{Membership Term}
+After the first year of membership, upon payment of annual dues, Members' terms shall be approximately one year long, from January 1^{st}\ of the current year to January 1^{st}\ of the following year.  The Executive Committee may 
+
+%Member Righsm
+\sec{Member Rights and Responsibilities}
+
+\subsec{Member Conduct}
+
+All Members 15 years old and under shall be directly supervised by their parent or legal guardian at all times at club functions. The Member's parents or legal guardian are responsible for their children's conduct, and fully liable for any and all damages caused by their children unless otherwise provided for by law. 
+
+All Members 16 to 17 years old do not require a parent or legal guardian in attendance, but the Member's parents or legal guardian are responsible for their children's conduct, and fully liable for any and all damages caused by their children unless otherwise provided for by law.
+
+All Members 18 years old and older are responsible for their own conduct and are personally responsible for any and all damages they may cause unless otherwise provided for by law. 
+
+\subsec{Member Rights}
+
+BayLUG Members shall enjoy rights to: 
+\begin{enumerate}
+    \item Communicate with other club members and participate in online discussion groups as described in \ref{art:communication}. 
+    \item Manage their Club membership as described in \ref{art:communication}. 
+    \item Cast ballots in member votes as described in \ref{art:officers-votes}. 
+    \item Nominate and/or run for Club officer positions as described in \ref{art:officers-votes}. 
+    \item Review Club financial and membership status as described in Subsection 5.04(c) Duties of the Treasurer and Subsection 5.04(d) Duties of the Secretary. 
+    \item Petition for the removal of Club officers as described in Article 5 Elected Officers. 
+    \item Attend Club meetings, and events as described in Article 7. Meetings of the Membership. Parents or legal guardians of Youth members may also attend. 
+    \item Submit a resolution to initiate a SIG as described in Article 9. Special Interest Groups. 
+    \item Attend SIG meetings and functions. Parents or legal guardians of Youth members may also attend. 
+\end{enumerate}
+
+%Voting Members
+\sec{Voting Members}
+For the purposes of voting, the membership shall be divided into two classes:  ``Voting Members'' and  ``Non-voting Members''.  Upon acceptance of membership, all members will be made part of the Non-voting Members.  Only Voting Members will be able to cast ballots as described in \ref{unkown}.  At any time, Non-voting Members may register to become a Voting Member as dsecribed in \ref{subsec:registering}.
+
+From time to time, as the Executive Committee sees fit, Voting Members who have failed to cast at least one ballot in any election of the previous calendar year may be made Non-voting Members.  
+
+\subsec{Registering to Vote}
+\label{subsec:registering}
+Any Non-voting Member may register to become a Voting Member at any time by submitting their request in writing to the VP, or in any other way as provided for by the Executive Committee.
+
+A Non-voting Member may vote in any election by submitting their request for registration up to and including the day of the election, as long as their request for registration occurs no later than the close of voting.
+
+\subsec{Communication with Non-voting Members}
+All Non-voting Members shall be notified upon the opening of Nominations (see \ref{unkonwn}), the opening of the voting period (see \ref{}), and the final determination of the election, but shall otherwise be exempt from all communication dealing with voting and election matters, unless otherwise requested by the Non-voting Member.
+
+The Executive Committee may decide to share additional communications dealing with voting and election matters with Non-voting Members, but is under no obligation to share said communications.
+
+%Termination of Membership
+\sec{Termination of Membership}
+
+\subsec{Membership Voluntary Termination}
+\label{subsec:vol-term}
+Any Member in good standing may apply for voluntary membership termination at any time by postal or electronic mail notice to the Vice President. The VP shall deem such notice accepted on evidence of return of all Club property and satisfaction of all obligations and shall strike the Member from the Roll of Club Members. 
+
+\subsec{Membership Automatic Termination}
+Any Member who has not paid their dues for the current calendar year within 30 days of the annual meeting will have their membership automatically terminated for lack of payment of dues, unless otherwise provided for by the Executive Committee.
+
+\subsec{Membership Involuntary Termination}
+Any Member who is not in good standing (as defined under \ref{subsec:good-standing}) shall be considered ineligible, and shall be involuntarily terminated. 
+
+At the discretion of the Executive Committee, the Member may be given a final chance to rectify their ineligibility. Subsequent to the determination of the status of that Member, the Executive Committee shall vote for or against their termination. An affirmative vote for termination of membership by a simple majority of the Executive Committee shall terminate their membership. 
+
+The Vice President shall give notice to the Member via postal or electronic mail to the address of record of the Member, which shall be deemed sufficient notice. 
+
+If the Executive Committee chooses not to pursue termination of an ineligible Member when the ineligibility first occurs, it does not waive any right to do so in future. Involuntary Termination shall bar the individual from ever rejoining the Club unless by a majority vote of the Executive Committee (to be held at the request of the terminated member). 
+
+\subsec{Family Membership Termination}
+One or more individuals that comprise a family membership, except the Family Representative, may be voluntarily or involuntarily terminated without affecting the membership of the rest of the family, as long as the family still comprises at least two persons. If the Family Representative is voluntarily or involuntarily terminated, the family may select a new Family Representative or may leave the Club as a whole. 
+
+\subsec{Terminated Membership Dues}
+If a Member's membership is terminated their dues and fees paid are forfeited in their entirety. There are no refunds for dues or fees. 
+
+\subsec{Club and Member property}
+Lent property, both Member property loaned to club and club property loaned to Member, should be returned. The terminated Member must also return their name badge. Termination does not release the Member from obligations to the Club such as, but not limited to, return of Club property. 
+
+\subsec{Reinstatement}
+If a Member's membership is terminated involuntarily, they may petition for reinstatement to the Executive committee, which may reinstate the member by an affirmative majority vote. 
+
+Members that were automatically terminated can be reinstated if they pay the delinquent dues, unless otherwise provided for by the Executive Committee. 
+
+\sec{Grandfathering of Current Members}
+
+At the time of acceptance of these Bylaws, all current Club Members are deemed to have satisfied the eligibility requirements, but remain subject to the good standing requirements defined in \ref{subsec:good-standing}. These bylaws supersede any and all previous agreements about membership \& dues policies. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Article: Communication %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\article{Communication}{Communication with and among the Members.}
+\label{art:communication}
+
+\sec{Types of Communication}
+The Club communicates with its members primarily via electronic means.  In rare circumstances, alternative communication channels may be used to communicate with members.  Members are not required to have access to an electronic communication channel, but it is strongly recommended.  Provisions for Members without access to an electronic communication channel will be handled on a case-by-case basis by the Executive Committee. 
+
+\subsec{Electronic communication}
+Members may subscribe to the electronic discussion groups that the Executive Committee selects as means of communication.  Members should keep all communications on said discussion groups confidential within the Club, unless otherwise advised. 
+
+Members are responsible for ensuring that their electronic mail address of record is a good and valid address capable of receiving and transmitting messages in a timely manner.  Members are responsible for providing to the VP in writing any changes to their electronic mail address. 
+
+Any member who unsubscribes from the ``members" mailing list will be viewed as voluntarily terminating their membership per \ref{subsec:vol-term}. 
+
+BayLUG maintains a website at \url{http://www.baylug.org}.  Information regarding the activities and status of the Club will be posted on the website.  Members are responsible for reading the website in a timely manner.
+
+\subsec{Alternative communication channels}
+Members are responsible for ensuring that their postal mail address and telephone number of record is valid and capable of receiving notifications in a timely manner. The Club shall not be responsible for failures in delivery. 
+
+Members are responsible for providing to the VP in writing any changes to their postal mail address or phone number. 
+
+\sec{Notice}
+\label{sec:notice}
+Unless otherwise specified, notice to Members can be given by electronic mail, postal mail, telephone, or the website. 
+
+Notice is deemed given by electronic mail when it is submitted for electronic transmission. Notice is deemed given by postal mail when given to the U.S. Postal Service for delivery.  Notice is deemed given by telephone when a member is spoken to, or a message is left with an agent of the member or an answering machine or voicemail.  Notice is deemed given by the website when the it is posted to the website. 
+
+Changes in the communications medium, except for extraordinary reasons, shall not be made so as to potentially disenfranchise any member, and shall be done with at least two months notice so as to allow all Members an orderly transition to the new medium. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Article: Officers and Member Votes %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\article{Officers and Member Votes}{The Executive Committee. Identification of officers and terms. The nomination and voting processes. Voting rights, quorum, Officer's duties, succession and removal}
+\label{art:officers-votes}
+
+\sec{Executive Committee}
+\label{sec:exec-committee}
+There shall be five elected Officers of BayLUG.  These five Officers shall collectively be known as the Executive Committee Members, and shall collectively constitute the Executive Committee.
+
+\subsec{Officers}
+The Officers of BayLUG shall be, in descending order of seniority: 
+President; 
+Vice President; 
+Treasurer; 
+Secretary; 
+Quartermaster.
+
+\subsec{Term of Office and Eligibility}
+
+The term of office of all Officers shall run concurrently and shall be for two years, coinciding with the Club's Annual Meeting. There shall be no restriction on the number of consecutive or total terms of office that a Member may hold. 
+
+Any Member in good standing and who is 18 years of age or older is eligible to be nominated as a Club officer.  No Member may be selected to hold more than one office unless the Membership of the Club is less than five Members.
+
+\subsec{Responsibilities of the Executive Committee}
+The Executive Committee is responsible for governing BayLUG, including but not limited to: 
+\begin{itemize}
+\item Exercising general managerial responsibilities over the Club.
+\item Establishing the policies of the Club, consistent with the Bylaws.
+\item Enforcing the Bylaws.
+\item Coordinating meetings of the members.
+\item Performing all other duties and assuming all other responsibilities as may be required by law or directed by the membership of BayLUG.
+\end{itemize}
+
+\subsec{Votes of the Executive Committee}
+Where these Bylaws use the phrasing ``the Executive Committee shall determine'' or similar, it means by an affirmative majority decision of those officers present, where a quorum of three officers exists. This process may be referred to in this document as a normal Executive Committee vote. Executive Committee votes may be held in person, by telephone, electronically, or by any other means agreed upon by the Executive Committee, and shall be recorded by the secretary. 
+
+\sec{Officer Nomination and Voting Process}
+All Club officers shall be democratically elected from among the Voting Members, by the Voting Members. Each officer shall hold office until his or her successor has been duly elected or until his or her death, resignation, or removal in the manner hereinafter provided. The voting process shall be carried out by the current Executive Committee, which shall hold in office until the new officers have been elected and have assumed office. Officer candidates shall be nominated, and their names voted on by Club members. 
+
+\subsec{Officer Nomination Eligibility and Process}
+
+
+Nominations for the offices shall open no less than 5 weeks prior to the scheduled election of officers.  The Executive Committee will give notice of the opening of nominations to all Members.
+
+Nominations may be submitted in writing to any current Executive Committee Member, or made public on the electronic communication medium then in use by the Club. A nomination shall consist of: the name of the Voting Member, the office for which they are nominated, and the affirmation of at least two Voting Members (the Nominator and the Second). Optionally a supporting statement may be included by the nominee. The Nominator and the Second shall both be Voting Members in good standing. A Voting Member may nominate themselves, but they may not second themselves. A nomination is subject to acceptance by the nominee.
+
+Nominations for the offices shall close no later than 3 weeks prior to the scheduled election of officers, and no sooner than two weeks after the nominations open.
+
+\sec{Voting: Timing, Process, Rights and Ballots}
+The Executive Committee shall provide to the Voting Members (as defined in \ref{sec:notice}) a ballot of all votes before the members, for officer elections or other purposes, after the close of officer nominations and at least three weeks prior to the scheduled election day.  The Executive Committee will also provide with the ballot any statements, in support of or against any issue of candidate on the ballot, submitted in writing to the Executive Committee.
+
+Voting shall open one week prior to the scheduled election day. Voting for Club Elected Officers shall occur only at Club Annual Meetings of alternate years, as described in \ref{sec:exec-committee}, or as needed to fill a vacancy.
+
+Individual Club members have the right to a maximum of one ballot per club office or issue, per vote. Family members have the right to a total of two ballots per family per office or issue per vote, and may be split as two separate whole votes for two candidates for an office. Only whole votes are allowed; partial votes are not allowed and will be disqualified. 
+
+Members shall cast ballots either via electronically or in person at the applicable Meeting.  Members have until 24 hours prior to the meeting to return their completed ballots via electronic means. Physical ballots shall be provided for members wishing to cast a ballot in person. All electronic and physical ballots shall be counted, and the results announced by the end of the meeting.
+ 
+Ballots will be distributed, collected and processed by the Election Judge (see section 6.01a). The Election Judge shall issue the ballots against a list of current members, and check in completed ballots against the same list. Family members will get two standard ballots.
+
+\subsec{Quorum}
+For any member vote to be valid, a quorum of at least 25\% of the Members (evaluated against the current Roll of Club Members) shall cast ballots by either electronic or physical means. For the purposes of defining a quorum, Individual Members shall be counted as one vote, Family Memberships shall be counted as two votes. In the event that a quorum is not met, the election shall be ruled invalid, and a new election shall be called for the next available opportunity. 
+
+\subsec{Votes Required} 
+All Members in good standing as of the commencement of the voting period shall be eligible to cast ballots in all club votes, regardless of the purpose of the vote. Officers shall be selected by a majority of the ballots cast. In the case of a tie for plurality, a runoff ballot shall be held between the two nominees named the highest number of ballots. Other member votes shall require 50\% plus 1 vote to pass, unless otherwise defined in these bylaws. 
+
+\subsec{Assumption of Offices} 
+The results will be tabulated by the conclusion at the Meeting in which the vote occurs, and shall take effect immediately upon announcement. The outgoing Executive Committee shall give every aid and advice to the incoming Executive Committee during the transition period between election and assumption of office. There shall be a two week period to completely transfer power, including bank account transfer and email roster updating. 
+
+\sec{Duties of Officers}
+This section is not an exhaustive enumeration of the duties of the Club Officers. 
+
+\subsec{Duties of the President}
+The President is the primary Executive Officer of the Club and shall preside at Club meetings. The President shall be the representative of the Club on any occasion when a person is required to act in that capacity. The President shall make appointments and removals of Appointed Officers as he or she deems appropriate. The President shall be responsible for Club marketing and public relations, and may appoint assistants in these areas at their discretion. The President shall be the secondary caretaker for the Club's bank accounts. 
+
+\subsec{Duties of the Vice President}
+The Vice President shall maintain the official Roll of Club Members, and make it available to officers in accordance with the performance of their duties. The VP is responsible for signing-up new Members and retaining existing Members. The VP shall report membership activity status at the Annual Meeting or upon request of any Member in good standing (with 30 days' prior notice). The VP shall assume the duties of the President at meetings, and other occasions as appropriate should the President be unable to attend. 
+
+\subsec{Duties of the Treasurer}
+The Treasurer shall be the primary caretaker for the Club’s bank account(s). The Treasurer shall manage all financial transactions, maintain a correct record of Club funds available, debts outstanding, Member debts to the Club outstanding, maintain the Club dues and fees schedule, and petty cash fund. The Treasurer shall report financial activity status at the Annual Meeting or upon request of any Member in good standing (require 30 days notice prior to meeting). The Treasurer shall also be responsible for producing and reporting other financial reports and analyses as requested by the Executive Committee. The Treasurer shall assume the duties of the President or VP at meetings and other occasions as appropriate should the President/VP be unable to attend. 
+
+\subsec{Duties of the Secretary}
+The Secretary shall keep a record (the minutes) of meeting activities, including votes, and shall make same available to the Executive Committee and membership via online means within two weeks of their completion. The Secretary shall be responsible for: meeting room/venue scheduling, notifying the Membership of meetings, coordinating meeting set-up, and welcoming guests, as required. The Secretary shall assume the duties of the Quartermaster at meetings and other occasions as appropriate should the Quartermaster be unable to attend. 
+
+\subsec{Duties of the Quartermaster}
+The Quartermaster shall be responsible for maintaining an inventory of Club Property and Member-owned property loaned to the Club as described in Section 8.04. The quartermaster shall prepare a summary of, and changes to, the club’s property at each annual meeting. The Quartermaster shall assume the duties of the Secretary at meetings and other occasions as appropriate should the Secretary be unable to attend. 
+
+\subsec{Officer Conflict of Interest (COI)}
+No member shall be disqualified from holding any club office by reason of any interest in any other club or concern. However, whenever a Club officer has a financial or personal interest in any matter coming before the executive committee, including participation in events or disbursement of club funds, the affected officer(s) shall: 
+\begin{enumerate}
+    \item fully disclose the nature of the interest and, 
+    \item recuse themselves from voting on the matter(s).
+\end{enumerate}
+
+Any vote involving a potential conflict of interest shall be approved only when a majority of disinterested Executive Committee officers determine that it is in the best interest of the club to do so. The Secretary shall record minutes of meetings where votes involving COI are taken that shall record such disclosure, recusion, and rationale for approval. In the event that there are insufficient disinterested officers to constitute a quorum of three, then a vote of the members shall be taken to decide the matter(s), per Subsections: 5.03(b) Voting Timing, Process, Rights and Ballots, 5.03(c) Quorum and 5.03(d) Votes Required. 
+
+\sec{Removal from Office} 
+\subsec{Voluntary Resignation}
+Any officer may resign their office by tendering a letter of resignation to the Executive Committee. The resignation is deemed effective immediately upon receipt, unless otherwise described in the letter. The letter shall state the name of the officer, the office being resigned from, and the effective date. If written, the officer resigning shall sign the letter. If electronic, provisions as to the authenticity of the letter shall be determined by the Executive Committee. 
+
+\subsec{Violation of Law or Statue}
+Any officer who is convicted of a felony offense while in office shall be deemed to have tendered a resignation effective as of the date of their initial conviction. 
+
+\subsec{Involuntary Removal}
+The Membership shall have the right to petition for a recall vote to remove a club officer. All petitions shall specify one officer for removal only. Multiple petitions may be filed.  
+
+A petition shall state the office and person to be removed and shall have the signatures of at least 50\% of the Members in good standing. The petition may be electronic or paper. It shall be presented to any member of the Executive Committee not then already subject to a recall vote or the subject of the petition itself, or to any Appointed Officer if all Executive Committee members are subject to recall. The officer subject to recall has the right to ask that the petition be certified as valid. The petition shall be deemed to be certified if all signatures are in order, or, if electronic in nature, if all those alleged to have signed it reply via email in the affirmative when queried. The first such petition submitted shall be the only one considered. If the petition is deemed valid, it shall be made public, and a recall vote shall be held at the next practical opportunity, per Subsections: 5.03(b) Voting Timing, Process, Rights and Ballots, 5.03(c) Quorum and 5.03(d) Votes Required. If the recall vote is successful, the officer is recalled and removed from office, and the Officer Succession provisions then apply. If the petition is deemed invalid, the recall fails and the officer remains in office. Alternatively, in special circumstances, an officer can be removed by unanimous consent of the other 4 officers. 
+
+\sec{Vacancies and Succession}
+If the President cannot fulfill his or her duties, resigns, leaves the Club, is removed, dies, or is otherwise unable to fulfill the term the Vice President (as determined by unanimous vote of the remaining executive committee members) will be the successor to the President.
+
+If any other officer cannot fulfill his or her duties, resigns, leaves the Club, is removed, dies, or is otherwise unable to fulfill the term (as determined by unanimous vote of the remaining executive committee members) then a replacement will be appointed by the Executive Committee by majority vote and with the appointee’s consent, until the next member election can be held to elect an individual to serve the balance of the term.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Article: Appointed Officers %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\article{Appointed Officers}{Need, terms, powers and subordination to the Executive Committee.}
+\sec{Appointment of Officers and Committees}
+From time to time the President may appoint special officers and/or establish or dissolve committees of members for various purposes in accordance with the overall Club Purpose, as described in Article 2. Purpose. 
+
+These officers and committee members shall be drawn from the ranks of current Members in good standing, and serve at the pleasure of the President. Their appointment and removal shall be ratified by majority vote of the Executive Committee. These votes apply to all Appointed Officers of whatever title, whether named specifically in these Bylaws or not. Individuals that are elected officers may also serve as appointed officers and/or committee members. 
+
+The duties and responsibilities of each special officer or committee member, unless specifically noted in this Article, are as defined by the President. 
+
+\subsec{Election Judge} 
+The Election Judge distributes and counts ballots, and announces results. The Election judge is a trustworthy member and neutral on the people/issues being decided, is appointed for the duration of the election by the Executive Committee, and can not be an officer. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Article Meetings of the Membership %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\article{Meetings of the Membership}{Annual meeting, additional meetings, frequency, schedule, and attendance.} 
+
+\sec{Annual Meeting} 
+The Club shall have at least one physical meeting each calendar year in January, at a place and time to be determined by the Executive Committee, and communicated to the membership no less than two weeks prior to said Annual Meeting. Unless specifically changed by the Executive Committee, the time of the Annual Meeting shall be held on the third Saturday in January at Noon Pacific Time. The Annual Meeting shall be held in the one of the nine counties of the San Francisco Bay Area. 
+
+\sec{Additional Meetings and Exhibits}
+It is the intent of the Club to have additional physical meetings approximately every two to three months, at places and times to be determined by the Executive Committee, and communicated to the membership no less than 2 weeks prior to said meetings. Additional meetings may be held anywhere, and are not restricted to the San Francisco Bay Area. Additional meetings and exhibits may or may not allow public attendance. The Club may from time to time present or participate in events, exhibits, and/or shows. These events may be organized by the Club, or by other groups as deemed appropriate by the Executive Committee. 
+
+\sec{Attendance by Members}
+There is no requirement for Members to attend any specific club meeting or exhibit. Members are encouraged to attend as many as they can, however attendance by Members is optional at any particular meeting or exhibit. At least one member of the Executive Committee or their designated representative must be present at every meeting. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Article: Funds and Property %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\article{Funds and Property}{Club funds, dues, the payment thereof; Club Property and Budget.}
+
+\sec{Club Funds and Usage} 
+All Club funds shall be kept in a recognized financial institution except for a small amount of petty cash held by the Treasurer. The Treasurer shall be responsible for the initiation, management, and termination of accounts in accordance with good and prudent financial practice, and shall be responsible for the mechanics of fund disbursement. 
+
+Club funds shall from time to time, be expended as the Executive Committee directs, in support of one or more of the purposes of the Club. The Club shall operate on a cash basis for accounting purposes and shall not expend funds if the Club does not already hold the funds. Any disbursement or loan of Club 
+funds greater than \$300 or 50\% of the Club funds (whichever is lower) for any purpose requires an email announcement to all members, requesting their feedback for a two week discussion period. If 20\% of members object, then a vote of 50\% plus one of members voting subject to the requirements in Subsection 5.03(c) shall be held. Disbursement votes shall occur as described in Subsections: 5.03(b) Voting Timing, Process, Rights and Ballots, 5.03(c) Quorum and 5.03(d) Votes Required. 
+
+If an expense authorized by the executive committee is incurred by a member, that member is eligible for reimbursement, provided that the member provides corresponding receipts for the expenditure(s). The expense must be authorized in advance of the activity requiring the expense. 
+
+\sec{Club Dues and Fees}
+Member dues are based on a calendar year cycle, due in full at or before the first club meeting of the year, in advance for that year. Dues may be paid in annual amounts in advance up to 5 years ahead. However there is no refund of pre-paid dues for any reason. New Members pay a flat New Member Fee plus dues, pro-rated quarterly for the first year and depending on the month that the new Member joins the Club. The Club dues and fees schedule shall be available on the BayLUG website. www.baylug.org. 
+
+Club dues and fees amounts may be adjusted and fees established or abolished by a majority vote of the Executive Committee with two months notice to members, prior to any dues/fee change becoming effective. Club dues and fees changes do not require amendment of these Bylaws.
+
+\sec{Club Property}
+In accordance with the Club Purpose, the Club may acquire and dispose of property as necessary to support operations. Modification or disposal of Club property must be approved by the Executive Committee in advance. 
+
+\subsec{Property Inventory}
+The Club Quartermaster shall establish and maintain a master inventory of all Club Property with a value more than \$5.00 per item, or in aggregate where items are fungible and customarily aggregated. The inventory shall describe the property, record the acquisition date and cost, and shall also record any loss, damage, or disposition of the property. If the property is donated to the club, the identity of the donor shall be recorded. The master inventory, it shall record where the property is currently located. 
+All Property in the Club's possession at the time of the adoption of these Bylaws will be recorded.
+
+\subsec{Donated or Loaned Property and Review}
+The club can accept gifts, donations, loans, or similar of property or items consistent with its purpose, or furthering of its goals, at the discretion of any member, subject to a review and their acceptance by the Executive Committee. Property/items so reviewed and accepted shall be added and maintained as part of the Club's property inventory by the Quartermaster, and used by the club for its purposes as determined by the Executive Committee and/or applicable SIG Chair.
+
+\subsec{Property Disposal}
+The Executive Committee may from time to time determine that some property/items in the club's possession are no longer needed, and/or in the Club's interest. In such cases, property/items loaned to the club shall be returned to its original owner via a means determined by the Executive Committee. Club-owned property/items so determined may be disposed of by the club by: sale, donation, or destruction, as determined by the Executive Committee.
+
+If disposal by sale is determined, the property'/items availability shall be announced to all members in good standing for purchase, in a manner chosen by the Executive Committee that avoids possible conflicts of interest, with subsequent notice as to who acquired the property/item. If no member(s) wishes to purchase said property/item it shall be sold as determined by the Executive Committee.
+
+If the property/item remains unsold, it shall be donated to a suitable charity, or otherwise disposed of as determined by the Executive Committee. Any funds or payment in kind received as compensation for items shall be accounted for by the Treasurer. If property/item disposal by donation or destruction is determined, the process shall be an announcement of the donation/destruction to members in good standing with at least 1 week prior notice. The charitable or destruction/disposal organization to receive the property/item shall be determined by the Executive Committee, and indicated in the announcement.
+
+The Executive Committee may decide at any point in any disposal processes, to terminate the disposal of any property/item, and return it to inventory.
+
+\sec{Budget}
+There is no requirement for a Club budget. Should the Executive Committee so decide and direct, a budget may be developed by the Treasurer and presented to the Members. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Article: Special Interest Groups %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\article{Special Interest Groups (SIGs)}{BayLTC, other special interest groups, their creation, operation, and termination.}
+
+\sec{SIG Creation}
+Any Member may propose the creation of a Special Interest Group (SIG) by submitting a resolution before the Executive Committee. The resolution shall define the: name, purpose, powers, and duties of the SIG. The SIG will come into existence if the Executive Committee approves the resolution using normal voting procedures. All members of the Club are also members of the SIG without limit. 
+
+\sec{Ongoing Operations} 
+Each Special Interest Group shall have the powers and duties defined in the resolution or resolutions adopting it, and shall have a designated representative (the “SIG Chair”) to report to the Executive Committee and the rest of the Club at least annually. Such SIG Chair serves at the pleasure of the President and is an Appointed Officer as described in Section 6.01 Appointment of Officers and Committee Members. The SIG Chair may be held by any adult member, including any current club officer. 
+SIGs shall not have separate treasuries. Their expenditures, if any, shall come from the general Club Treasury, and their revenues, if any, shall likewise accrue to the Club Treasury. 
+
+\sec{SIG Dissolution}
+A Special Interest Group may be dissolved by affirmative vote of the Executive Committee using normal voting procedures. 
+
+\sec{Initial Club SIGs}
+The following Special Interest Group exists as of the execution of these bylaws. 
+
+\subsec{Bay Area LEGO Train Club}
+The Bay Area LEGO Train Club (BayLTC) shall be a Special Interest Group within the meaning of this article. The purpose of BayLTC is to display Train and Town displays at museums, conventions, traditional model railroading shows, and other venues with the intention of showing that L-gauge Trains are a legitimate option in model railroading. BayLTC has the power to earn donations by attending model railroading shows and spending these donations as needed for keeping the displays in operating form. The duties of BayLTC include recruiting new members and spreading the word about LEGO and LEGO Trains as a family hobby. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Initial Acceptance of the Bylaws and Officers %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\article{Initial Acceptance of the Bylaws and Officers}{}
+These Bylaws shall be put before the Membership of the Club via electronic mail for acceptance by more than 50\% of those members voting.  At the time that these Bylaws were developed, the provisional officers were: Bill Ward, President; .Paul Sinasohn, Vice President; Russell Clark, Treasurer; Brian Thiemer, Secretary; Bruce Chamberlain, Quartermaster. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Article: Amendment of the Bylaws %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\article{Amendment of the Bylaws}{The amendment process, also applies to the amendment process itself.}
+
+\sec{Bylaws Changes Initiated by Petition}
+Members may move to alter, amend, or repeal any provision of these Bylaws or add additional Bylaws. Proposals require petition of 50\% of the members to form a committee, will then meet to discuss the proposed change(s) and draft new language and/or determine which terms are to be removed. The committee must reach unanimous consensus on the amendment to be made. After the committee has finished its work, it will present amendment(s) for a vote.
+
+No such alteration, repeal, or addition shall be considered unless approved by the affirmative vote of at least 2/3 of those voting when there is a quorum of 25\% of members as described in Subsection 5.03(c) Quorum, and Subsection 5.03(d) Votes Required.
+
+\sec{Bylaws Changes Initiated by the Executive Committee}
+The Executive Committee may move to alter, amend, or repeal any provision of these Bylaws or add additional Bylaws. Initiating the creation of candidate bylaws changes requires an affirmative vote by any 4 of the 5 members of the Executive Committee as to the topics/sections concerned, and recorded by the Secretary. A further affirmative vote of any 4 of the 5 members of the Executive Committee, as recorded by the Secretary, is required to present the candidate bylaws change(s), additions/deletions and related prose for a member vote.
+
+No alteration, repeal, or addition to candidate bylaws changes presented by the Executive Committee shall be executed unless approved by the affirmative vote of at least 2/3 of voting members when there is a quorum of 25\% of members at any meeting, as described in Subsection 5.03(c) Quorum, and Subsection 5.03(d) Votes Required.
+
+\sec{Amendment of the process of Amendment of Bylaws}
+Amendments to this Article of the Bylaws may be made only by the same voting procedure described in Section 11.01 or Section 11.02 of this Article. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Article: Dissolution %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\article{Dissolution}{Dissolution of the Club and asset disposition.}
+
+\sec{Dissolution by Resolution}
+The Club may be dissolved by Resolution. Such a resolution shall be presented by the Executive Committee to the general membership and shall require an affirmative vote of 2/3 of those voting when there is a quorum of 25% of members as described in Subsection 5.03(c) Quorum, and Subsection 5.03(d) Votes Required 
+
+\sec{Disposition of Assets}
+Upon the dissolution of the Club, its assets remaining after payment, or provision for payment, of all Club debts and liabilities, shall be distributed to a non-profit fund, foundation, or corporation which is organized and operated for charitable purposes, as directed in the resolution that dissolves the Club. Any Member-owned property shall be returned to the proper member.
+
+%%%%%%%%%%%%%%%%%%%%%
+%% Revision Status %%
+%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Revision Status}
+Initial Revision approved by membership vote; released 12/31/09
+Revision 2.0 approved by membership vote 2/19/11 with amendments:
+\begin{enumerate}
+    \item Incorporation: Changed Sections 2.01 Mission and 2.02 Nature and Purpose; added Section 2.03 Incorporation to reflect the club’s new status as a California Unincorporated Association
+    \item Property: Added definition and Sections 8.03 (b) and (c) addressing loans and dispositions.
+    \item Amendments: Added Section 11.02 Bylaws Changes Initiated by the Executive Committee; re-numbered previous Section 11.02 Amendment of the process of Amendment of Bylaws to 11.03
+    \item Membership Term: Added Section 3.04 Membership Term, and modified Section 8.02 Club Dues and Fees to reflect renewals at the first meeting each year.
+    \item Minor typographical corrections.
+\end{enumerate}
+
+
+
+\label{LastPage}
+\end{document}
+
